@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – ShootingTrackerFree</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600&family=Barlow+Condensed:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0d0f14;
+      --surface: #161a22;
+      --border: #252b38;
+      --accent: #e8a020;
+      --text: #c8cdd8;
+      --text-strong: #edf0f5;
+      --text-muted: #666e80;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 1rem;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 2rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    .logo-icon {
+      width: 42px; height: 42px;
+      background: var(--accent);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem; color: #000; font-weight: 700; flex-shrink: 0;
+    }
+    .logo-text {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.4rem; font-weight: 700;
+      color: var(--text-strong);
+      letter-spacing: 0.04em; text-transform: uppercase; flex: 1;
+    }
+    .logo-text span { color: var(--accent); }
+
+    .lang-toggle {
+      display: flex; align-items: center;
+      border: 1px solid var(--border);
+      border-radius: 8px; overflow: hidden; flex-shrink: 0;
+    }
+    .lang-btn {
+      background: none; border: none; cursor: pointer;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.85rem; font-weight: 700; letter-spacing: 0.06em;
+      color: var(--text-muted);
+      padding: 0.4rem 0.9rem;
+      transition: background 0.2s, color 0.2s;
+    }
+    .lang-btn.active { background: var(--accent); color: #000; }
+    .lang-btn:not(.active):hover { background: rgba(232,160,32,0.1); color: var(--accent); }
+
+    main { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .page-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2.4rem; font-weight: 700;
+      color: var(--text-strong);
+      text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.4rem;
+    }
+    .page-subtitle {
+      color: var(--text-muted); font-size: 0.9rem;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid var(--border); padding-bottom: 1.5rem;
+    }
+    .page-subtitle strong { color: var(--accent); }
+    section { margin-bottom: 2.5rem; }
+    h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.15rem; font-weight: 700;
+      color: var(--accent); text-transform: uppercase;
+      letter-spacing: 0.08em; margin-bottom: 0.8rem;
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    h2::before {
+      content: ''; display: inline-block;
+      width: 3px; height: 1rem;
+      background: var(--accent); border-radius: 2px;
+    }
+    p { margin-bottom: 0.8rem; }
+    ul { margin-left: 1.4rem; margin-bottom: 0.8rem; }
+    ul li { margin-bottom: 0.4rem; }
+    .highlight-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 6px; padding: 1rem 1.2rem;
+      margin: 1rem 0; font-size: 0.95rem;
+    }
+    .highlight-box strong { color: var(--text-strong); }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .tag {
+      display: inline-block;
+      background: rgba(232,160,32,0.12); color: var(--accent);
+      border: 1px solid rgba(232,160,32,0.3);
+      border-radius: 4px; font-size: 0.75rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; padding: 0.1rem 0.5rem; margin-right: 0.4rem;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center; padding: 2rem;
+      color: var(--text-muted); font-size: 0.85rem;
+    }
+
+    /* Language switching */
+    .lang-it, .lang-en { display: none; }
+    body.it .lang-it    { display: block; }
+    body.en .lang-en    { display: block; }
+    span.lang-it, span.lang-en       { display: none; }
+    body.it span.lang-it              { display: inline; }
+    body.en span.lang-en              { display: inline; }
+
+    @media (max-width: 600px) {
+      main { padding: 2rem 1.2rem 4rem; }
+      .page-title { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body class="it">
+
+<header>
+  <div class="logo-icon">STF</div>
+  <div class="logo-text">Shooting<span>Tracker</span>Free</div>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-it" onclick="setLang('it')">IT</button>
+    <button class="lang-btn"        id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+</header>
+
+<main>
+  <h1 class="page-title">
+    <span class="lang-it">Informativa Privacy</span>
+    <span class="lang-en">Privacy Policy</span>
+  </h1>
+
+  <p class="page-subtitle">
+    <span class="lang-it">Versione aggiornata: <strong id="date-it"></strong> &nbsp;&middot;&nbsp; App: ShootingTrackerFree &nbsp;&middot;&nbsp; Titolare: Carlo Pisani</span>
+    <span class="lang-en">Last updated: <strong id="date-en"></strong> &nbsp;&middot;&nbsp; App: ShootingTrackerFree &nbsp;&middot;&nbsp; Controller: Carlo Pisani</span>
+  </p>
+
+  <!-- ═══ ITALIANO ═══ -->
+  <div class="lang-it">
+
+    <section>
+      <h2>Introduzione</h2>
+      <p>La presente informativa descrive le modalit&agrave; di gestione dei dati nell&rsquo;ambito dell&rsquo;applicazione
+      <strong>ShootingTrackerFree</strong>, in conformit&agrave; al <strong>Regolamento (UE) 2016/679</strong> (GDPR)
+      e al <strong>D.Lgs. 196/2003</strong> come modificato dal D.Lgs. 101/2018.</p>
+      <div class="highlight-box">
+        <strong>Principio fondamentale:</strong> ShootingTrackerFree <strong>non trasmette n&eacute; archivia
+        dati personali su server esterni</strong>. I dati inseriti dall&rsquo;utente (profili, sessioni di tiro,
+        statistiche) vengono conservati <strong>esclusivamente sul dispositivo dell&rsquo;utente</strong>,
+        non sono accessibili da remoto e sono ad uso esclusivo del proprietario del dispositivo.
+      </div>
+    </section>
+
+    <section>
+      <h2>Dati raccolti dall&rsquo;applicazione</h2>
+      <p><span class="tag">App</span> L&rsquo;app consente la creazione di uno o pi&ugrave; profili utente locali per permettere
+      a pi&ugrave; tiratori di utilizzare la stessa applicazione sullo stesso dispositivo. Nello specifico:</p>
+      <ul>
+        <li>&Egrave; possibile registrare un nome utente e creare un profilo personale</li>
+        <li>I profili, le sessioni di tiro e le statistiche sono memorizzati <strong>esclusivamente in locale sul dispositivo</strong></li>
+        <li>Nessun dato di registrazione o di utilizzo viene trasmesso a server esterni</li>
+        <li>I dati sono accessibili e modificabili solo dal proprietario del dispositivo</li>
+        <li>La cancellazione dell&rsquo;app comporta la rimozione definitiva di tutti i dati locali</li>
+      </ul>
+      <div class="highlight-box">
+        <strong>Nessuna trasmissione remota:</strong> i dati inseriti dall&rsquo;utente non lasciano mai il dispositivo
+        e non sono accessibili da parte dello sviluppatore n&eacute; da terze parti tramite l&rsquo;app.
+      </div>
+    </section>
+
+    <section>
+      <h2>Pubblicit&agrave; &ndash; Google AdMob</h2>
+      <p><span class="tag">AdMob</span> L&rsquo;applicazione integra il servizio pubblicitario <strong>Google AdMob</strong>,
+      che pu&ograve; raccogliere e utilizzare dati per mostrare annunci pertinenti. AdMob pu&ograve; raccogliere:</p>
+      <ul>
+        <li>Identificatori pubblicitari del dispositivo (Advertising ID / GAID)</li>
+        <li>Dati sull&rsquo;interazione con gli annunci</li>
+        <li>Informazioni sul dispositivo (modello, sistema operativo, lingua)</li>
+        <li>Dati di rete (indirizzo IP approssimativo)</li>
+      </ul>
+      <div class="highlight-box">
+        Questi dati vengono trattati da Google secondo la propria informativa privacy.
+        Per maggiori dettagli consultare:
+        <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a><br/>
+        Per gestire le preferenze pubblicitarie:
+        <a href="https://adssettings.google.com" target="_blank">adssettings.google.com</a>
+      </div>
+      <p>L&rsquo;utente pu&ograve; limitare la raccolta dati pubblicitari nelle impostazioni del proprio dispositivo Android:
+      <em>Impostazioni &rarr; Privacy &rarr; Annunci &rarr; Disattiva personalizzazione annunci</em>.</p>
+    </section>
+
+    <section>
+      <h2>Base giuridica del trattamento</h2>
+      <p>Il trattamento dei dati da parte di AdMob avviene sulla base del consenso dell&rsquo;utente
+      (art. 6 par. 1 lett. a GDPR), espresso al momento del primo avvio dell&rsquo;applicazione tramite
+      il Consent Management Platform (CMP) integrato da Google.</p>
+    </section>
+
+    <section>
+      <h2>Diritti dell&rsquo;interessato</h2>
+      <p>In qualsiasi momento l&rsquo;utente pu&ograve; esercitare i seguenti diritti:</p>
+      <ul>
+        <li><strong>Accesso:</strong> ottenere conferma del trattamento dei propri dati</li>
+        <li><strong>Rettifica:</strong> ottenere la correzione di dati inesatti</li>
+        <li><strong>Cancellazione:</strong> ottenere la cancellazione dei dati (diritto all&rsquo;oblio)</li>
+        <li><strong>Limitazione:</strong> richiedere la limitazione del trattamento</li>
+        <li><strong>Opposizione:</strong> opporsi al trattamento per finalit&agrave; pubblicitarie</li>
+        <li><strong>Portabilit&agrave;:</strong> ricevere i propri dati in formato strutturato</li>
+      </ul>
+      <p>Per i dati trattati da Google AdMob, i diritti si esercitano direttamente tramite gli strumenti
+      messi a disposizione da Google (link sopra indicati).</p>
+    </section>
+
+    <section>
+      <h2>Titolare del trattamento</h2>
+      <p>Il Titolare del trattamento &egrave; <strong>Carlo Pisani</strong>, sviluppatore dell&rsquo;applicazione
+      ShootingTrackerFree.<br/>
+      Per qualsiasi richiesta relativa alla privacy è possibile contattarci via email:
+      <a>carlopisani [at] live.it</a>
+    </p>
+    </section>
+
+    <section>
+      <h2>Modifiche alla presente informativa</h2>
+      <p>Ci riserviamo il diritto di aggiornare la presente informativa. Le modifiche saranno pubblicate
+      su questa pagina con aggiornamento della data in calce. Per modifiche sostanziali sar&agrave;
+      richiesto un nuovo consenso esplicito all&rsquo;interno dell&rsquo;applicazione.</p>
+    </section>
+
+  </div><!-- /lang-it -->
+
+  <!-- ═══ ENGLISH ═══ -->
+  <div class="lang-en">
+
+    <section>
+      <h2>Introduction</h2>
+      <p>This policy describes how data is managed within the <strong>ShootingTrackerFree</strong> application,
+      in compliance with <strong>EU Regulation 2016/679</strong> (GDPR) and applicable Italian data
+      protection legislation.</p>
+      <div class="highlight-box">
+        <strong>Core principle:</strong> ShootingTrackerFree <strong>does not transmit or store personal
+        data on external servers</strong>. All user data (profiles, shooting sessions, statistics) is stored
+        <strong>exclusively on the user&rsquo;s device</strong>, cannot be accessed remotely, and is solely
+        available to the device owner.
+      </div>
+    </section>
+
+    <section>
+      <h2>Data collected by the app</h2>
+      <p><span class="tag">App</span> The app allows the creation of one or more local user profiles so that
+      multiple shooters can use the same application on the same device. Specifically:</p>
+      <ul>
+        <li>Users can register a username and create a personal profile</li>
+        <li>Profiles, shooting sessions and statistics are stored <strong>exclusively on the device</strong></li>
+        <li>No registration or usage data is transmitted to external servers</li>
+        <li>Data can only be accessed and modified by the device owner</li>
+        <li>Uninstalling the app permanently removes all local data</li>
+      </ul>
+      <div class="highlight-box">
+        <strong>No remote transmission:</strong> data entered by the user never leaves the device and is
+        not accessible by the developer or any third party through the app.
+      </div>
+    </section>
+
+    <section>
+      <h2>Advertising &ndash; Google AdMob</h2>
+      <p><span class="tag">AdMob</span> The application uses <strong>Google AdMob</strong> to display
+      advertisements. AdMob may collect:</p>
+      <ul>
+        <li>Device advertising identifiers (Advertising ID / GAID)</li>
+        <li>Data about interactions with ads</li>
+        <li>Device information (model, operating system, language)</li>
+        <li>Network data (approximate IP address)</li>
+      </ul>
+      <div class="highlight-box">
+        This data is processed by Google under their own privacy policy.
+        For more details see:
+        <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a><br/>
+        To manage your advertising preferences:
+        <a href="https://adssettings.google.com" target="_blank">adssettings.google.com</a>
+      </div>
+      <p>You can limit ad data collection in your Android device settings:
+      <em>Settings &rarr; Privacy &rarr; Ads &rarr; Opt out of Ads Personalisation</em>.</p>
+    </section>
+
+    <section>
+      <h2>Legal basis for processing</h2>
+      <p>AdMob data processing is based on the user&rsquo;s consent (Art. 6(1)(a) GDPR), given at the first
+      launch of the application through Google&rsquo;s integrated Consent Management Platform (CMP).</p>
+    </section>
+
+    <section>
+      <h2>User rights</h2>
+      <p>At any time, users may exercise the following rights:</p>
+      <ul>
+        <li><strong>Access:</strong> obtain confirmation of whether their data is being processed</li>
+        <li><strong>Rectification:</strong> obtain correction of inaccurate data</li>
+        <li><strong>Erasure:</strong> obtain deletion of data (right to be forgotten)</li>
+        <li><strong>Restriction:</strong> request restriction of processing</li>
+        <li><strong>Objection:</strong> object to processing for advertising purposes</li>
+        <li><strong>Portability:</strong> receive data in a structured, machine-readable format</li>
+      </ul>
+      <p>Rights concerning data processed by Google AdMob are exercised directly through the tools
+      provided by Google (links above).</p>
+    </section>
+
+    <section>
+      <h2>Data controller</h2>
+      <p>The data controller is <strong>Carlo Pisani</strong>, developer of the ShootingTrackerFree application.<br/>
+      For any privacy-related requests please contact:
+      <a>carlopisani [at] live.it</a>
+    </section>
+
+    <section>
+      <h2>Changes to this policy</h2>
+      <p>We reserve the right to update this policy at any time. Changes will be published on this page
+      with an updated date. For substantial changes, explicit consent will be requested again within
+      the application.</p>
+    </section>
+
+  </div><!-- /lang-en -->
+
+</main>
+
+<footer>
+  &copy; <span id="year"></span> Carlo Pisani &ndash; ShootingTrackerFree &nbsp;&middot;&nbsp;
+  <span class="lang-it">Tutti i diritti riservati</span>
+  <span class="lang-en">All rights reserved</span>
+</footer>
+
+<script>
+  const now = new Date();
+  document.getElementById('date-it').textContent = now.toLocaleDateString('it-IT', {day:'2-digit', month:'long', year:'numeric'});
+  document.getElementById('date-en').textContent = now.toLocaleDateString('en-GB', {day:'2-digit', month:'long', year:'numeric'});
+  document.getElementById('year').textContent    = now.getFullYear();
+
+  function setLang(lang) {
+    document.body.className = lang;
+    document.getElementById('btn-it').classList.toggle('active', lang === 'it');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.documentElement.lang = lang;
+  }
+</script>
+
+</body>
+</html>
